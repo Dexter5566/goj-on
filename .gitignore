@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+
+# angular cache
+.angular
+
+#git lock
+yarn.lock
+package-lock.json
+
+# compiled output
+dist
+
+# Editor directories and files
+
+.DS_Store
+
+# local version check file for demo
+src/assets/version.html
+
+.VSCodeCounter
+node_modules
