@@ -73,10 +73,10 @@ export class AppComponent implements OnInit {
                     alert('Successed!!!');
                 }
             }
-            this.selected.actived = false;
+            this.selected.active = false;
             this.selected = null;
         } else {
-            card.actived = true;
+            card.active = true;
             this.selected = card;
         }
     }
