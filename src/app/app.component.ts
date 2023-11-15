@@ -59,6 +59,28 @@ export class AppComponent implements OnInit {
 
     cards: any = [];
 
+    selected: any = null;
+
+    score: number = 0;
+
+    selectCard(card: any) {
+        if (this.selected) {
+            if (card.romaji === this.selected.romaji) {
+                card.done = true;
+                this.selected.done = true;
+                this.score += 1;
+                if (this.score === this.gojuon.length) {
+                    alert('Successed!!!');
+                }
+            }
+            this.selected.actived = false;
+            this.selected = null;
+        } else {
+            card.actived = true;
+            this.selected = card;
+        }
+    }
+
     ngOnInit(): void {
         this.cards = [
             ...this.gojuon.map(item => ({ ...item, sign: item.hiragana })),

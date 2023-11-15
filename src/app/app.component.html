@@ -5,7 +5,7 @@
         alt="Angular Logo"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
     />
-    <span>Welcome</span>
+    <span>Score : {{ score }}</span>
     <div class="spacer"></div>
     <a
         aria-label="Angular on YouTube"
@@ -32,8 +32,7 @@
 </div>
 
 <div class="content" role="main">
-    <!-- Highlight Card -->
-    <div class="card highlight-card card-small">
+    <!-- <div class="card highlight-card card-small">
         <svg
             id="rocket"
             xmlns="http://www.w3.org/2000/svg"
@@ -91,27 +90,17 @@
         </svg>
     </div>
 
-    <!-- Resources -->
+  
     <h2>Resources</h2>
-    <p>Here are some links to help you get started:</p>
+    <p>Here are some links to help you get started:</p> -->
 
-    <div class="card-container">
-        <a class="card card-small" *ngFor="let card of cards">
+    <div class="card-container terminal">
+        <button [disabled]="card.done" class="card card-small" *ngFor="let card of cards" (click)="selectCard(card)">
             <span>{{ card.sign }} </span>
-        </a>
+        </button>
     </div>
 
     <input type="hidden" #selection />
-
-    <!-- Terminal -->
-    <div class="terminal" [ngSwitch]="selection.value">
-        <pre *ngSwitchDefault>ng generate component xyz</pre>
-        <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
-        <pre *ngSwitchCase="'pwa'">ng add @angular/pwa</pre>
-        <pre *ngSwitchCase="'dependency'">ng add _____</pre>
-        <pre *ngSwitchCase="'test'">ng test</pre>
-        <pre *ngSwitchCase="'build'">ng build</pre>
-    </div>
 
     <!-- Links -->
     <div class="card-container">
@@ -198,11 +187,3 @@
         />
     </svg>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
