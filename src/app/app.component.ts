@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
     title = 'goj-on-web';
 
+    private sounds = {
+        correct: new Audio('assets/music/correct_1.mp3'),
+        wrong: new Audio('assets/music/wrong_1.mp3')
+    };
+
     gojuon = [
         { hiragana: 'あ', katakana: 'ア', romaji: 'a' },
         { hiragana: 'い', katakana: 'イ', romaji: 'i' },
@@ -68,12 +73,17 @@ export class AppComponent implements OnInit {
     selectCard(card: any) {
         if (this.selected) {
             if (card.romaji === this.selected.romaji) {
+                this.sounds.correct.play();
                 card.done = true;
                 this.selected.done = true;
                 this.score += 1;
+
+                // finished!
                 if (this.score === this.gojuon.length) {
                     alert('Successed!!!');
                 }
+            } else {
+                this.sounds.wrong.play();
             }
             this.selected.active = false;
             this.selected = null;
