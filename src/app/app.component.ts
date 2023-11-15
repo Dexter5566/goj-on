@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlossomScene, myBlossomSceneConfig } from './sakura/sakura.component';
 
 @Component({
     selector: 'app-root',
@@ -101,6 +102,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        new BlossomScene(myBlossomSceneConfig);
+
         switch (this.mode) {
             case 'easy':
                 const hiragana = this.gojuon.map(item => ({ ...item, sign: item.hiragana }));
