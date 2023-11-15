@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
 
     private sounds = {
         correct: new Audio('assets/music/correct_1.mp3'),
+        music: new Audio('assets/music/music.mp3'),
         wrong: new Audio('assets/music/wrong_1.mp3')
     };
 
@@ -102,6 +103,8 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.sounds.music.play();
+
         new BlossomScene(myBlossomSceneConfig);
 
         switch (this.mode) {
