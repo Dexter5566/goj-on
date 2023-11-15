@@ -57,6 +57,8 @@ export class AppComponent implements OnInit {
         { hiragana: 'ん', katakana: 'ン', romaji: 'n' }
     ];
 
+    mode: string = 'easy';
+
     cards: any = [];
 
     selected: any = null;
@@ -89,11 +91,28 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.cards = [
-            ...this.gojuon.map(item => ({ ...item, sign: item.hiragana })),
-            ...this.gojuon.map(item => ({ ...item, sign: item.katakana }))
-        ];
+        switch (this.mode) {
+            case 'easy':
+                const hiragana = this.gojuon.map(item => ({ ...item, sign: item.hiragana }));
+                const katakana = this.gojuon.map(item => ({ ...item, sign: item.katakana }));
 
-        this.shuffle(this.cards);
+                this.shuffle(hiragana);
+                this.shuffle(katakana);
+
+                this.cards = [...hiragana, ...katakana];
+
+                break;
+            case 'mixed':
+                this.cards = [
+                    ...this.gojuon.map(item => ({ ...item, sign: item.hiragana })),
+                    ...this.gojuon.map(item => ({ ...item, sign: item.katakana }))
+                ];
+
+                this.shuffle(this.cards);
+                break;
+
+            default:
+                break;
+        }
     }
 }
