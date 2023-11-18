@@ -67,8 +67,10 @@ export class AppComponent implements OnInit {
 
     private sounds = {
         correct: new Audio('assets/music/correct_1.mp3'),
-        music: new Audio('assets/music/music.mp3'),
-        wrong: new Audio('assets/music/wrong_1.mp3')
+        music_easy: new Audio('assets/music/music_easy.mp3'),
+        music_hard: new Audio('assets/music/music_hard.mp3'),
+        wrong: new Audio('assets/music/wrong_1.mp3'),
+        game_start: new Audio('assets/music/drum_hit.mp3')
     };
 
     gojuon: Gojuon[] = [];
@@ -129,9 +131,20 @@ export class AppComponent implements OnInit {
     ];
 
     selectMode(keys: (keyof Gojuon)[]): void {
+        this.sounds.game_start.play();
+
+        this.selected = null;
+
         this.gojuon = [...GOJUON];
 
-        this.sounds.music.play();
+        this.sounds.music_easy.load();
+        this.sounds.music_hard.load();
+
+        if (keys.length === 3) {
+            this.sounds.music_hard.play();
+        } else {
+            this.sounds.music_easy.play();
+        }
 
         const g1: Gojuon[] = [];
         const g2: Gojuon[] = [];
