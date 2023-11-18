@@ -70,6 +70,7 @@ export class AppComponent implements OnInit {
         music_easy: new Audio('assets/music/music_easy.mp3'),
         music_hard: new Audio('assets/music/music_hard.mp3'),
         wrong: new Audio('assets/music/wrong_1.mp3'),
+        win: new Audio('assets/music/win.mp3'),
         game_start: new Audio('assets/music/drum_hit.mp3')
     };
 
@@ -91,7 +92,7 @@ export class AppComponent implements OnInit {
 
                 // finished!
                 if (this.score === this.gojuon.length) {
-                    alert('Successed!!!');
+                    this.sounds.win.play();
                 }
             } else {
                 this.sounds.wrong.play();
