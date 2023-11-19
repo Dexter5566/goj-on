@@ -1,61 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { BlossomScene, myBlossomSceneConfig } from './sakura/sakura.component';
+import goujuon from './quiz/goujuon.json';
+import textbook from './quiz/textbook.json';
 
 interface Gojuon {
-    hiragana: string;
-    katakana: string;
-    romaji: string;
+    key1: string;
+    key2: string;
+    key3?: string;
     sign?: string;
 }
 
-const GOJUON: Gojuon[] = [
-    { hiragana: 'あ', katakana: 'ア', romaji: 'a' },
-    { hiragana: 'い', katakana: 'イ', romaji: 'i' },
-    { hiragana: 'う', katakana: 'ウ', romaji: 'u' },
-    { hiragana: 'え', katakana: 'エ', romaji: 'e' },
-    { hiragana: 'お', katakana: 'オ', romaji: 'o' },
-    { hiragana: 'か', katakana: 'カ', romaji: 'ka' },
-    { hiragana: 'き', katakana: 'キ', romaji: 'ki' },
-    { hiragana: 'く', katakana: 'ク', romaji: 'ku' },
-    { hiragana: 'け', katakana: 'ケ', romaji: 'ke' },
-    { hiragana: 'こ', katakana: 'コ', romaji: 'ko' },
-    { hiragana: 'さ', katakana: 'サ', romaji: 'sa' },
-    { hiragana: 'し', katakana: 'シ', romaji: 'shi' },
-    { hiragana: 'す', katakana: 'ス', romaji: 'su' },
-    { hiragana: 'せ', katakana: 'セ', romaji: 'se' },
-    { hiragana: 'そ', katakana: 'ソ', romaji: 'so' },
-    { hiragana: 'た', katakana: 'タ', romaji: 'ta' },
-    { hiragana: 'ち', katakana: 'チ', romaji: 'chi' },
-    { hiragana: 'つ', katakana: 'ツ', romaji: 'tsu' },
-    { hiragana: 'て', katakana: 'テ', romaji: 'te' },
-    { hiragana: 'と', katakana: 'ト', romaji: 'to' },
-    { hiragana: 'な', katakana: 'ナ', romaji: 'na' },
-    { hiragana: 'に', katakana: 'ニ', romaji: 'ni' },
-    { hiragana: 'ぬ', katakana: 'ヌ', romaji: 'nu' },
-    { hiragana: 'ね', katakana: 'ネ', romaji: 'ne' },
-    { hiragana: 'の', katakana: 'ノ', romaji: 'no' },
-    { hiragana: 'は', katakana: 'ハ', romaji: 'ha' },
-    { hiragana: 'ひ', katakana: 'ヒ', romaji: 'hi' },
-    { hiragana: 'ふ', katakana: 'フ', romaji: 'fu' },
-    { hiragana: 'へ', katakana: 'ヘ', romaji: 'he' },
-    { hiragana: 'ほ', katakana: 'ホ', romaji: 'ho' },
-    { hiragana: 'ま', katakana: 'マ', romaji: 'ma' },
-    { hiragana: 'み', katakana: 'ミ', romaji: 'mi' },
-    { hiragana: 'む', katakana: 'ム', romaji: 'mu' },
-    { hiragana: 'め', katakana: 'メ', romaji: 'me' },
-    { hiragana: 'も', katakana: 'モ', romaji: 'mo' },
-    { hiragana: 'や', katakana: 'ヤ', romaji: 'ya' },
-    { hiragana: 'ゆ', katakana: 'ユ', romaji: 'yu' },
-    { hiragana: 'よ', katakana: 'ヨ', romaji: 'yo' },
-    { hiragana: 'ら', katakana: 'ラ', romaji: 'ra' },
-    { hiragana: 'り', katakana: 'リ', romaji: 'ri' },
-    { hiragana: 'る', katakana: 'ル', romaji: 'ru' },
-    { hiragana: 'れ', katakana: 'レ', romaji: 're' },
-    { hiragana: 'ろ', katakana: 'ロ', romaji: 'ro' },
-    { hiragana: 'わ', katakana: 'ワ', romaji: 'wa' },
-    { hiragana: 'を', katakana: 'ヲ', romaji: 'wo' },
-    { hiragana: 'ん', katakana: 'ン', romaji: 'n' }
-];
+const GOJUON: Gojuon[] = goujuon;
 
 @Component({
     selector: 'app-root',
@@ -74,7 +29,7 @@ export class AppComponent implements OnInit {
         game_start: new Audio('assets/music/drum_hit.mp3')
     };
 
-    gojuon: Gojuon[] = [];
+    questions: Gojuon[] = [];
 
     cards: any = [];
 
@@ -84,17 +39,19 @@ export class AppComponent implements OnInit {
 
     selectCard(card: any) {
         if (this.selected) {
-            if (card.romaji === this.selected.romaji) {
+            if (card.key1 === this.selected.key1) {
+                this.sounds.correct.load();
                 this.sounds.correct.play();
                 card.done = true;
                 this.selected.done = true;
                 this.score += 1;
 
                 // finished!
-                if (this.score === this.gojuon.length) {
+                if (this.score === this.questions.length) {
                     this.sounds.win.play();
                 }
             } else {
+                this.sounds.wrong.load();
                 this.sounds.wrong.play();
             }
             this.selected.active = false;
@@ -114,29 +71,39 @@ export class AppComponent implements OnInit {
 
     menuItems: any = [
         {
-            label: '【あア】Hiragana / Katakana',
-            keys: ['hiragana', 'katakana']
+            label: '【あ/ア】',
+            keys: ['key1', 'key2'],
+            pool: GOJUON
         },
         {
-            label: '【あa】Hiragana / Romaji',
-            keys: ['hiragana', 'romaji']
+            label: '【あ/a】',
+            keys: ['key1', 'key3'],
+            pool: GOJUON
         },
         {
-            label: '【アa】Katakana / Romaji',
-            keys: ['katakana', 'romaji']
+            label: '【ア/a】',
+            keys: ['key2', 'key3'],
+            pool: GOJUON
         },
         {
-            label: '【あアa】Hiragana/Katakana / Romaji',
-            keys: ['hiragana', 'katakana', 'romaji']
-        }
+            label: '【あ/ア/a】',
+            keys: ['key1', 'key2', 'key3'],
+            pool: GOJUON
+        },
+        ...textbook.map(item => ({
+            label: item.label,
+            keys: ['key1', 'key2'],
+            pool: item.words
+        }))
     ];
 
-    selectMode(keys: (keyof Gojuon)[]): void {
+    selectMode(keys: (keyof Gojuon)[], pool: Gojuon[]): void {
         this.sounds.game_start.play();
 
         this.selected = null;
+        this.questions.length = 0;
 
-        this.gojuon = [...GOJUON];
+        this.questions = [...pool];
 
         this.sounds.music_easy.load();
         this.sounds.music_hard.load();
@@ -150,12 +117,12 @@ export class AppComponent implements OnInit {
         const g1: Gojuon[] = [];
         const g2: Gojuon[] = [];
 
-        this.gojuon.forEach(item => {
+        this.questions.forEach(item => {
             const randomIndex = Math.floor(Math.random() * keys.length);
 
             let newKeys;
 
-            if (keys.length === 2) {
+            if (keys.length < 3 || !item.key3) {
                 newKeys = keys;
             } else {
                 newKeys = keys.slice(0, randomIndex).concat(keys.slice(randomIndex + 1));
