@@ -118,7 +118,7 @@ svg.material-icons:not(:last-child) {
 
 .card.card-small {
     height: 16px;
-    width: 16px;
+    width: fit-content;
 }
 
 .card-container .card:not(.highlight-card) {
@@ -299,8 +299,4 @@ svg#clouds {
         display: none;
         visibility: hidden;
     }
-}
-
-.menu-item {
-    width: 100%;
 }
