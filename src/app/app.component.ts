@@ -114,19 +114,19 @@ export class AppComponent implements OnInit {
 
     menuItems: any = [
         {
-            label: '平仮名/片仮名',
+            label: '【あア】Hiragana / Katakana',
             keys: ['hiragana', 'katakana']
         },
         {
-            label: '平仮名/羅馬',
+            label: '【あa】Hiragana / Romaji',
             keys: ['hiragana', 'romaji']
         },
         {
-            label: '片仮名/羅馬',
+            label: '【アa】Katakana / Romaji',
             keys: ['katakana', 'romaji']
         },
         {
-            label: '平仮名/片仮名/羅馬',
+            label: '【あアa】Hiragana/Katakana / Romaji',
             keys: ['hiragana', 'katakana', 'romaji']
         }
     ];
