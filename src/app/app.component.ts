@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlossomScene, myBlossomSceneConfig } from './sakura/sakura.component';
 import goujuon from './quiz/goujuon.json';
 import textbook from './quiz/textbook.json';
-
+import other from './quiz/other.json';
 interface Gojuon {
     key1: string;
     key2: string;
@@ -90,7 +90,7 @@ export class AppComponent implements OnInit {
             keys: ['key1', 'key2', 'key3'],
             pool: GOJUON
         },
-        ...textbook.map(item => ({
+        ...textbook.concat(other).map(item => ({
             label: item.label,
             keys: ['key1', 'key2'],
             pool: item.words
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
         this.sounds.music_easy.load();
         this.sounds.music_hard.load();
 
-        if (keys.length === 3) {
+        if (Math.random() < 0.5) {
             this.sounds.music_hard.play();
         } else {
             this.sounds.music_easy.play();
