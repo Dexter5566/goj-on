@@ -50,9 +50,8 @@
             Select Game Mode
             <small>【 Match あ/ア/a to earn a score 】</small>
         </h1>
-
         <div class="card-container">
-            <button class="card menu-item" *ngFor="let item of menuItems" (click)="selectMode(item.keys)">
+            <button class="card" *ngFor="let item of menuItems" (click)="selectMode(item.keys, item.pool)">
                 {{ item.label }}
             </button>
         </div>
