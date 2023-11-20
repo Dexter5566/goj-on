@@ -3,14 +3,12 @@ import { BlossomScene, myBlossomSceneConfig } from './sakura/sakura.component';
 import goujuon from './quiz/goujuon.json';
 import textbook from './quiz/textbook.json';
 import other from './quiz/other.json';
-interface Gojuon {
+interface Quiz {
     key1: string;
     key2: string;
     key3?: string;
     sign?: string;
 }
-
-const GOJUON: Gojuon[] = goujuon;
 
 @Component({
     selector: 'app-root',
@@ -29,7 +27,7 @@ export class AppComponent implements OnInit {
         game_start: new Audio('assets/music/drum_hit.mp3')
     };
 
-    questions: Gojuon[] = [];
+    questions: Quiz[] = [];
 
     cards: any = [];
 
@@ -73,22 +71,22 @@ export class AppComponent implements OnInit {
         {
             label: '【あ/ア】',
             keys: ['key1', 'key2'],
-            pool: GOJUON
+            pool: goujuon
         },
         {
             label: '【あ/a】',
             keys: ['key1', 'key3'],
-            pool: GOJUON
+            pool: goujuon
         },
         {
             label: '【ア/a】',
             keys: ['key2', 'key3'],
-            pool: GOJUON
+            pool: goujuon
         },
         {
             label: '【あ/ア/a】',
             keys: ['key1', 'key2', 'key3'],
-            pool: GOJUON
+            pool: goujuon
         },
         ...textbook.concat(other).map(item => ({
             label: item.label,
@@ -97,7 +95,7 @@ export class AppComponent implements OnInit {
         }))
     ];
 
-    selectMode(keys: (keyof Gojuon)[], pool: Gojuon[]): void {
+    selectMode(keys: (keyof Quiz)[], pool: Quiz[]): void {
         this.sounds.game_start.play();
 
         this.selected = null;
@@ -114,8 +112,8 @@ export class AppComponent implements OnInit {
             this.sounds.music_easy.play();
         }
 
-        const g1: Gojuon[] = [];
-        const g2: Gojuon[] = [];
+        const g1: Quiz[] = [];
+        const g2: Quiz[] = [];
 
         this.questions.forEach(item => {
             const randomIndex = Math.floor(Math.random() * keys.length);
