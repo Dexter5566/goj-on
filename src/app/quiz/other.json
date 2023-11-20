@@ -82,100 +82,194 @@
         ]
     },
     {
-        "label": "國名/地名",
+        "label": "日本の地名",
         "words": [
-    {
-        "key1": "Japan",
-        "key2": "にほん"
-    },
-    {
-        "key1": "China",
-        "key2": "ちゅうごく"
-    },
-    {
-        "key1": "United States",
-        "key2": "アメリカ合衆国"
-    },
-    {
-        "key1": "France",
-        "key2": "フランス"
-    },
-    {
-        "key1": "Germany",
-        "key2": "ドイツ"
-    },
-    {
-        "key1": "United Kingdom",
-        "key2": "イギリス"
-    },
-    {
-        "key1": "Italy",
-        "key2": "イタリア"
-    },
-    {
-        "key1": "Spain",
-        "key2": "スペイン"
-    },
-    {
-        "key1": "Canada",
-        "key2": "カナダ"
-    },
-    {
-        "key1": "Australia",
-        "key2": "オーストラリア"
-    },
-    {
-        "key1": "Brazil",
-        "key2": "ブラジル"
-    },
-    {
-        "key1": "India",
-        "key2": "インド"
-    },
-    {
-        "key1": "South Korea",
-        "key2": "かんこく"
-    },
-    {
-        "key1": "Russia",
-        "key2": "ロシア"
-    },
-    {
-        "key1": "Mexico",
-        "key2": "メキシコ"
-    },
-    {
-        "key1": "Argentina",
-        "key2": "アルゼンチン"
-    },
-    {
-        "key1": "Egypt",
-        "key2": "エジプト"
-    },
-    {
-        "key1": "Taiwan",
-        "key2": "たいわん"
-    },
-        {
-        "key1": "Hong Kong",
-        "key2": "ほんこん"
-    },
-    {
-        "key1": "South Africa",
-        "key2": "南アフリカ"
-    },
-                    {
-        "key1": "Shanghai",
-        "key2": "しゃんはい"
-    },
-    {
-        "key1": "Singapore",
-        "key2": "しんがぽーる"
-    },
-    {
-        "key1": "Saudi Arabia",
-        "key2": "サウジアラビア"
-    }
+            {
+                "key1": "東京",
+                "key2": "とうきょう"
+            },
+            {
+                "key1": "大阪",
+                "key2": "おおさか"
+            },
+            {
+                "key1": "京都",
+                "key2": "きょうと"
+            },
+            {
+                "key1": "横浜",
+                "key2": "よこはま"
+            },
+            {
+                "key1": "名古屋",
+                "key2": "なごや"
+            },
+            {
+                "key1": "札幌",
+                "key2": "さっぽろ"
+            },
+            {
+                "key1": "福岡",
+                "key2": "ふくおか"
+            },
+            {
+                "key1": "神戸",
+                "key2": "こうべ"
+            },
+            {
+                "key1": "広島",
+                "key2": "ひろしま"
+            },
+            {
+                "key1": "奈良",
+                "key2": "なら"
+            },
+            {
+                "key1": "富士山",
+                "key2": "ふじさん"
+            },
+            {
+                "key1": "姫路城",
+                "key2": "ひめじじょう"
+            },
+            {
+                "key1": "日光",
+                "key2": "にっこ"
+            },
+            {
+                "key1": "箱根",
+                "key2": "はこねまち"
+            },
+            {
+                "key1": "お台場",
+                "key2": "おだいば"
+            },
+            {
+                "key1": "宮島",
+                "key2": "みやじま"
+            },
+
+            {
+                "key1": "函館",
+                "key2": "はこだて"
+            },
+            {
+                "key1": "富良野",
+                "key2": "ふらの"
+            },
+            {
+                "key1": "小樽",
+                "key2": "おたる"
+            },
+            {
+                "key1": "北海道",
+                "key2": "ほっかいどう"
+            },
+            {
+                "key1": "旭川",
+                "key2": "あさひかわ"
+            }
         ]
     },
+    {
+        "label": "國名/地名",
+        "words": [
+            {
+                "key1": "Disneyland",
+                "key2": "ディズニーランド"
+            },
+            {
+                "key1": "Japan",
+                "key2": "にほん"
+            },
+            {
+                "key1": "China",
+                "key2": "ちゅうごく"
+            },
+            {
+                "key1": "United States",
+                "key2": "アメリカ合衆国"
+            },
+            {
+                "key1": "France",
+                "key2": "フランス"
+            },
+            {
+                "key1": "Germany",
+                "key2": "ドイツ"
+            },
+            {
+                "key1": "United Kingdom",
+                "key2": "イギリス"
+            },
+            {
+                "key1": "Italy",
+                "key2": "イタリア"
+            },
+            {
+                "key1": "Spain",
+                "key2": "スペイン"
+            },
+            {
+                "key1": "Canada",
+                "key2": "カナダ"
+            },
+            {
+                "key1": "Australia",
+                "key2": "オーストラリア"
+            },
+            {
+                "key1": "Brazil",
+                "key2": "ブラジル"
+            },
+            {
+                "key1": "India",
+                "key2": "インド"
+            },
+            {
+                "key1": "South Korea",
+                "key2": "かんこく"
+            },
+            {
+                "key1": "Russia",
+                "key2": "ロシア"
+            },
+            {
+                "key1": "Mexico",
+                "key2": "メキシコ"
+            },
+            {
+                "key1": "Argentina",
+                "key2": "アルゼンチン"
+            },
+            {
+                "key1": "Egypt",
+                "key2": "エジプト"
+            },
+            {
+                "key1": "Taiwan",
+                "key2": "たいわん"
+            },
+            {
+                "key1": "Hong Kong",
+                "key2": "ほんこん"
+            },
+            {
+                "key1": "South Africa",
+                "key2": "南アフリカ"
+            },
+            {
+                "key1": "Shanghai",
+                "key2": "しゃんはい"
+            },
+            {
+                "key1": "Singapore",
+                "key2": "しんがぽーる"
+            },
+            {
+                "key1": "Saudi Arabia",
+                "key2": "サウジアラビア"
+            }
+        ]
+    }
 ]
