@@ -80,5 +80,102 @@
             { "key1": "橙", "key2": "オレンジ" },
             { "key1": "櫻桃番茄", "key2": "チェリートマト" }
         ]
+    },
+    {
+        "label": "國名/地名",
+        "words": [
+    {
+        "key1": "Japan",
+        "key2": "にほん"
+    },
+    {
+        "key1": "China",
+        "key2": "ちゅうごく"
+    },
+    {
+        "key1": "United States",
+        "key2": "アメリカ合衆国"
+    },
+    {
+        "key1": "France",
+        "key2": "フランス"
+    },
+    {
+        "key1": "Germany",
+        "key2": "ドイツ"
+    },
+    {
+        "key1": "United Kingdom",
+        "key2": "イギリス"
+    },
+    {
+        "key1": "Italy",
+        "key2": "イタリア"
+    },
+    {
+        "key1": "Spain",
+        "key2": "スペイン"
+    },
+    {
+        "key1": "Canada",
+        "key2": "カナダ"
+    },
+    {
+        "key1": "Australia",
+        "key2": "オーストラリア"
+    },
+    {
+        "key1": "Brazil",
+        "key2": "ブラジル"
+    },
+    {
+        "key1": "India",
+        "key2": "インド"
+    },
+    {
+        "key1": "South Korea",
+        "key2": "かんこく"
+    },
+    {
+        "key1": "Russia",
+        "key2": "ロシア"
+    },
+    {
+        "key1": "Mexico",
+        "key2": "メキシコ"
+    },
+    {
+        "key1": "Argentina",
+        "key2": "アルゼンチン"
+    },
+    {
+        "key1": "Egypt",
+        "key2": "エジプト"
+    },
+    {
+        "key1": "Taiwan",
+        "key2": "たいわん"
+    },
+        {
+        "key1": "Hong Kong",
+        "key2": "ほんこん"
+    },
+    {
+        "key1": "South Africa",
+        "key2": "南アフリカ"
+    },
+                    {
+        "key1": "Shanghai",
+        "key2": "しゃんはい"
+    },
+    {
+        "key1": "Singapore",
+        "key2": "しんがぽーる"
+    },
+    {
+        "key1": "Saudi Arabia",
+        "key2": "サウジアラビア"
     }
+        ]
+    },
 ]
