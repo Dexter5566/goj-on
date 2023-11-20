@@ -217,6 +217,30 @@
         "label": "國名/地名",
         "words": [
             {
+                "key1": "Canada",
+                "key2": "カナダ"
+            },
+            {
+                "key1": "Russia",
+                "key2": "ロシア"
+            },
+            {
+                "key1": "Indonesia",
+                "key2": "インドネシア"
+            },
+            {
+                "key1": "Thailand",
+                "key2": "タイ"
+            },
+            {
+                "key1": "Philippines",
+                "key2": "フィリピン"
+            },
+            {
+                "key1": "Vietnam",
+                "key2": "ベトナム"
+            },
+            {
                 "key1": "Disneyland",
                 "key2": "ディズニーランド"
             },
