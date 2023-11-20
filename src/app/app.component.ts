@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
         },
         ...textbook.concat(other).map(item => ({
             label: item.label,
-            keys: ['key1', 'key2'],
+            keys: ['key1', 'key2', 'key3'],
             pool: item.words
         }))
     ];
