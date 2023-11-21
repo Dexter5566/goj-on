@@ -49,6 +49,8 @@ export class AppComponent implements OnInit {
             this.synth.speak(this.utter);
         }
 
+        if (this.selected?.group === card.group) return;
+
         if (this.selected) {
             if (card.key1 === this.selected.key1) {
                 this.sounds.correct.load();
