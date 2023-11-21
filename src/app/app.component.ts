@@ -8,6 +8,7 @@ interface Quiz {
     key2: string;
     key3?: string;
     sign?: string;
+    group?: string;
 }
 
 @Component({
@@ -16,6 +17,10 @@ interface Quiz {
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+    constructor(private utter: SpeechSynthesisUtterance) {
+        this.utter.lang = 'ja-JP';
+    }
+
     title = 'goj-on-web';
 
     private sounds = {
@@ -29,6 +34,9 @@ export class AppComponent implements OnInit {
 
     questions: Quiz[] = [];
 
+    synth = window.speechSynthesis;
+
+    // ***********GAME***********
     cards: any = [];
 
     selected: any = null;
@@ -36,6 +44,11 @@ export class AppComponent implements OnInit {
     score: number = 0;
 
     selectCard(card: any) {
+        if (card.group === 'g2') {
+            this.utter.text = card.sign;
+            this.synth.speak(this.utter);
+        }
+
         if (this.selected) {
             if (card.key1 === this.selected.key1) {
                 this.sounds.correct.load();
@@ -67,6 +80,7 @@ export class AppComponent implements OnInit {
         }
     }
 
+    // ***********MENU***********
     menuItems: any = [
         {
             label: '【あ/ア】',
@@ -126,8 +140,8 @@ export class AppComponent implements OnInit {
                 newKeys = keys.slice(0, randomIndex).concat(keys.slice(randomIndex + 1));
             }
 
-            g1.push({ ...item, sign: item[newKeys[0]] });
-            g2.push({ ...item, sign: item[newKeys[1]] });
+            g1.push({ ...item, sign: item[newKeys[0]], group: 'g1' });
+            g2.push({ ...item, sign: item[newKeys[1]], group: 'g2' });
         });
 
         this.shuffle(g1);
@@ -137,6 +151,9 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.sounds.music_easy.volume = 0.2;
+        this.sounds.music_hard.volume = 0.2;
+
         new BlossomScene(myBlossomSceneConfig);
     }
 }
