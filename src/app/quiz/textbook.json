@@ -60,7 +60,6 @@
             { "key1": "cordless", "key2": "コードレス" },
             { "key1": "bluetooth", "key2": "ブルートゥース" },
             { "key1": "headset", "key2": "ヘッドセット" },
-            { "key1": "radio", "key2": "ラジオ" },
             { "key1": "camera", "key2": "カメラ" },
             { "key1": "computer", "key2": "コンピュータ" },
             { "key1": "車", "key2": "くるま" },
