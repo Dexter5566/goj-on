@@ -19,7 +19,7 @@ interface Quiz {
 export class AppComponent implements OnInit {
     constructor(private utter: SpeechSynthesisUtterance) {
         this.utter.lang = 'ja-JP';
-        this.utter.rate = 1.1;
+        this.utter.rate = 1.0;
         this.utter.pitch = 1.1;
     }
 
