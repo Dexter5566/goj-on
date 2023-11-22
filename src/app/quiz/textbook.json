@@ -38,6 +38,7 @@
             { "key1": "新聞", "key2": "しんぶん" },
             { "key1": "note", "key2": "ノート" },
             { "key1": "notebook", "key2": "ノートパソコン" },
+            { "key1": "personal computer", "key2": "パソコン" },
             { "key1": "laptop", "key2": "ラップトップ" },
             { "key1": "desktop", "key2": "デスクトップ" },
             { "key1": "tablet", "key2": "タブレット" },
