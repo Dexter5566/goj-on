@@ -46,11 +46,6 @@ export class AppComponent implements OnInit {
     score: number = 0;
 
     selectCard(card: any) {
-        if (card.group === 'g2') {
-            this.utter.text = card.sign;
-            this.synth.speak(this.utter);
-        }
-
         // if (this.selected?.group === card.group) return;
 
         if (this.selected) {
@@ -74,6 +69,13 @@ export class AppComponent implements OnInit {
         } else {
             card.active = true;
             this.selected = card;
+        }
+
+        if (card.group === 'g2') {
+            setTimeout(() => {
+                this.utter.text = card.sign;
+                this.synth.speak(this.utter);
+            }, 500);
         }
     }
 
