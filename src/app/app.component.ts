@@ -118,8 +118,10 @@ export class AppComponent implements OnInit {
     selectMode(keys: (keyof Quiz)[], pool: Quiz[]): void {
         this.sounds.game_start.play();
 
+        // init
         this.selected = null;
         this.questions.length = 0;
+        this.score = 0;
 
         this.questions = [...pool];
 
