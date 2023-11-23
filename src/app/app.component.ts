@@ -58,7 +58,9 @@ export class AppComponent implements OnInit {
 
                 // finished!
                 if (this.score === this.questions.length) {
-                    this.sounds.win.play();
+                    setTimeout(() => {
+                        this.sounds.win.play();
+                    }, 500);
                 }
             } else {
                 this.sounds.wrong.load();
