@@ -168,6 +168,25 @@
         ]
     },
     {
+        "label": "れんさてん",
+        "words": [
+            { "key1": "McDonald's", "key2": "マクドナルド" },
+            { "key1": "Subway", "key2": "サブウェイ" },
+            { "key1": "Domino's", "key2": "ドミノ" },
+            { "key1": "Burger King", "key2": "バーガーキング" },
+            { "key1": "7-Eleven", "key2": "セブンイレブン" },
+            { "key1": "Lawson", "key2": "ローソン" },
+            { "key1": "FamilyMart", "key2": "ファミリーマート" },
+            { "key1": "Uniqlo", "key2": "ユニクロ" },
+            { "key1": "Nitori", "key2": "ニトリ" },
+            { "key1": "MOS Burger", "key2": "モスバーガー" },
+            { "key1": "Yoshinoya", "key2": "よしのや" },
+            { "key1": "Sukiya", "key2": "すきや" },
+            { "key1": "Bic Camera", "key2": "ビックカメラ" },
+            { "key1": "Starbucks", "key2": "スターバックス" }
+        ]
+    },
+    {
         "label": "果物",
         "words": [
             { "key1": "蘋果", "key2": "りんご" },
