@@ -91,17 +91,17 @@ export class AppComponent implements OnInit {
         {
             label: 'あ/ア',
             keys: ['key1', 'key2'],
-            pool: goujuon
+            pool: goujuon.map(c => ({ key1: c.key1, key2: c.key2 }))
         },
         {
             label: 'あ/a',
             keys: ['key1', 'key3'],
-            pool: goujuon
+            pool: goujuon.map(c => ({ key1: c.key1, key3: c.key3 }))
         },
         {
             label: 'ア/a',
             keys: ['key2', 'key3'],
-            pool: goujuon
+            pool: goujuon.map(c => ({ key2: c.key2, key3: c.key3 }))
         },
         {
             label: 'あ/ア/a',
