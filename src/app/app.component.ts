@@ -89,22 +89,22 @@ export class AppComponent implements OnInit {
     // ***********MENU***********
     menuItems: any = [
         {
-            label: '【あ/ア】',
+            label: 'あ/ア',
             keys: ['key1', 'key2'],
             pool: goujuon
         },
         {
-            label: '【あ/a】',
+            label: 'あ/a',
             keys: ['key1', 'key3'],
             pool: goujuon
         },
         {
-            label: '【ア/a】',
+            label: 'ア/a',
             keys: ['key2', 'key3'],
             pool: goujuon
         },
         {
-            label: '【あ/ア/a】',
+            label: 'あ/ア/a',
             keys: ['key1', 'key2', 'key3'],
             pool: goujuon
         },
