@@ -155,6 +155,11 @@ export class AppComponent implements OnInit {
         this.shuffle(g2);
 
         this.cards = [...g1, ...g2];
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     ngOnInit(): void {
