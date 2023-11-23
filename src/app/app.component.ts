@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
             this.selected = card;
         }
 
-        if (card.group === 'g2') {
+        if (card.group === 'g2' && !/[a-zA-Z]/.test(card.sign)) {
             setTimeout(() => {
                 this.utter.text = card.sign;
                 this.synth.speak(this.utter);
