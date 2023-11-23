@@ -90,32 +90,27 @@ export class AppComponent implements OnInit {
     menuItems: any = [
         {
             label: 'あ/ア',
-            keys: ['key1', 'key2'],
             pool: goujuon.map(c => ({ key1: c.key1, key2: c.key2 }))
         },
         {
             label: 'あ/a',
-            keys: ['key1', 'key3'],
             pool: goujuon.map(c => ({ key1: c.key1, key3: c.key3 }))
         },
         {
             label: 'ア/a',
-            keys: ['key2', 'key3'],
             pool: goujuon.map(c => ({ key2: c.key2, key3: c.key3 }))
         },
         {
             label: 'あ/ア/a',
-            keys: ['key1', 'key2', 'key3'],
             pool: goujuon
         },
         ...textbook.concat(other).map(item => ({
             label: item.label,
-            keys: ['key1', 'key2', 'key3'],
             pool: item.words
         }))
     ];
 
-    selectMode(keys: (keyof Quiz)[], pool: Quiz[]): void {
+    selectMode(pool: Quiz[]): void {
         this.sounds.game_start.play();
 
         // init
@@ -138,18 +133,20 @@ export class AppComponent implements OnInit {
         const g2: Quiz[] = [];
 
         this.questions.forEach(item => {
+            const keys: string[] = Object.keys(item);
+
             const randomIndex = Math.floor(Math.random() * keys.length);
 
             let newKeys;
 
-            if (keys.length < 3 || !item.key3) {
+            if (keys.length < 3) {
                 newKeys = keys;
             } else {
                 newKeys = keys.slice(0, randomIndex).concat(keys.slice(randomIndex + 1));
             }
 
-            g1.push({ ...item, sign: item[newKeys[0]], group: 'g1' });
-            g2.push({ ...item, sign: item[newKeys[1]], group: 'g2' });
+            g1.push({ ...item, sign: Object.values(item)[0], group: 'g1' });
+            g2.push({ ...item, sign: Object.values(item)[1], group: 'g2' });
         });
 
         this.shuffle(g1);

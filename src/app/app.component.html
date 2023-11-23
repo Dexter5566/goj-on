@@ -51,7 +51,7 @@
             <small>【 Match あ/ア/a to earn a score 】</small>
         </h1>
         <div class="card-container">
-            <button class="card" *ngFor="let item of menuItems" (click)="selectMode(item.keys, item.pool)">
+            <button class="card" *ngFor="let item of menuItems" (click)="selectMode(item.pool)">
                 {{ item.label }}
             </button>
         </div>
