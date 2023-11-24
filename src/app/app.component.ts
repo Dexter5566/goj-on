@@ -46,6 +46,16 @@ export class AppComponent implements OnInit {
     score: number = 0;
 
     selectCard(card: any) {
+        if (card.group === 'g2' && !/[a-zA-Z]/.test(card.sign)) {
+            setTimeout(
+                () => {
+                    this.utter.text = card.sign;
+                    this.synth.speak(this.utter);
+                },
+                this.selected ? 500 : 0
+            );
+        }
+
         // if (this.selected?.group === card.group) return;
 
         if (this.selected) {
@@ -71,13 +81,6 @@ export class AppComponent implements OnInit {
         } else {
             card.active = true;
             this.selected = card;
-        }
-
-        if (card.group === 'g2' && !/[a-zA-Z]/.test(card.sign)) {
-            setTimeout(() => {
-                this.utter.text = card.sign;
-                this.synth.speak(this.utter);
-            }, 500);
         }
     }
 
