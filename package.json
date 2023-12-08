@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve --port 1234",
-        "build": "git pull && ng build  && node update-version.js && git add package.json && git commit -m \"Update version\" && git push",
+        "build": "git pull && ng build  && node update-version.js",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },

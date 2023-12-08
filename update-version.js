@@ -1,6 +1,7 @@
 // update-version.js
 
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 // 获取当前日期
 const currentDate = new Date();
@@ -29,3 +30,8 @@ if (year !== lastYear || month !== lastMonth) {
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
 console.log('Version updated to:', packageJson.version);
+
+// 提交更改并包含版本号
+execSync(`git add package.json`);
+execSync(`git commit -m "Update version - ${packageJson.version}"`);
+execSync(`git push`);
