@@ -2,6 +2,7 @@
     "name": "goj-on-web",
     "version": "0.0.0",
     "scripts": {
+        "prebuild": "node update-version.js && git add package.json && git commit -m 'Update version' && git push",
         "ng": "ng",
         "start": "ng serve --port 1234",
         "build": "ng build",
