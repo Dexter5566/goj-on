@@ -10,6 +10,8 @@ const month = currentDate.getMonth() + 1; // 月份从 0 开始，需要加 1
 
 // 读取 package.json 文件
 const packageJsonPath = 'package.json';
+const versionHtmlPath = 'dist/goj-on-web/assets/version.html';
+
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
 // 检查上次版本号中的年份和月份
@@ -28,6 +30,8 @@ if (year !== lastYear || month !== lastMonth) {
 
 // 将更新后的版本号写回 package.json 文件
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+
+fs.writeFileSync(versionHtmlPath, packageJson.version);
 
 console.log('Version updated to:', packageJson.version);
 
